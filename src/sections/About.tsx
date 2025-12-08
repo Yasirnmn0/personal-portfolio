@@ -19,6 +19,7 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
+import AnimatedSection from "@/lib/Animate-on-scroll";
 
 const MapWithNoSSR = dynamic(() => import("../components/Map"), {
   ssr: false,
@@ -123,71 +124,79 @@ export const AboutSection = () => {
   return (
     <div className="py-20 lg:py-28">
       <div className="container">
-        <SectionHeader
-          eyebrow="About Me"
-          title="A Glimpse Into My World"
-          description="Learn more about who I am, what I do, and what inspires me."
-        />
+        <AnimatedSection>
+          <SectionHeader
+            eyebrow="About Me"
+            title="A Glimpse Into My World"
+            description="Learn more about who I am, what I do, and what inspires me."
+          />
+        </AnimatedSection>
         <div className="mt-20 flex flex-col gap-8">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
-            <Card className="h-[320px] md:col-span-2 lg:col-span-1">
-              <CardHeader
-                title="My Reads"
-                description="Explore the book shaping my perspectives."
-              />
-              <div className="w-40 mx-auto mt-2 md:mt-0">
-                <Image src={bookImage} alt="Book Cover" />
-              </div>
-            </Card>
-            <Card className="h-[320px]  md:col-span-3 lg:col-span-2">
-              <CardHeader
-                title="My Toolbox"
-                description=" Explore the technologies and tools I use to craft exceptional
-                digital experiences."
-                className=""
-              />
-              <ToolboxItems
-                items={toolboxItems}
-                className=""
-                itemsWraperclassName="animate-move-left animation-duration"
-              />
-              <ToolboxItems
-                items={toolboxItems}
-                className="mt-6"
-                itemsWraperclassName="animate-move-right animation-duration15"
-              />
-            </Card>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:grid-cols-3 ">
-            <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
-              <CardHeader
-                title="Beyond the code"
-                description="Explore my interests and hobbies beyond the digital realm"
-                className="px-6 py-6"
-              />
+          {" "}
+          <AnimatedSection>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
+              <Card className="h-[320px] md:col-span-2 lg:col-span-1">
+                <CardHeader
+                  title="My Reads"
+                  description="Explore the book shaping my perspectives."
+                />
+                <div className="w-40 mx-auto mt-2 md:mt-0">
+                  <Image src={bookImage} alt="Book Cover" />
+                </div>
+              </Card>
 
-              <div className="relative flex-1" ref={consttraintRef}>
-                {hobbies.map((hobby) => (
-                  <motion.div
-                    key={hobby.title}
-                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
-                    style={{
-                      left: hobby.left,
-                      top: hobby.top,
-                    }}
-                    drag
-                    dragConstraints={consttraintRef}
-                  >
-                    <span className="font-medium text-gray-950">
-                      {hobby.title}
-                    </span>
-                    <span>{hobby.emoji} </span>
-                  </motion.div>
-                ))}
-              </div>
-            </Card>
-            <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
-              {/* <Image
+              <Card className="h-[320px]  md:col-span-3 lg:col-span-2">
+                <CardHeader
+                  title="My Toolbox"
+                  description=" Explore the technologies and tools I use to craft exceptional
+                digital experiences."
+                  className=""
+                />
+                <ToolboxItems
+                  items={toolboxItems}
+                  className=""
+                  itemsWraperclassName="animate-move-left animation-duration"
+                />
+                <ToolboxItems
+                  items={toolboxItems}
+                  className="mt-6"
+                  itemsWraperclassName="animate-move-right animation-duration15"
+                />
+              </Card>
+            </div>{" "}
+          </AnimatedSection>
+          <AnimatedSection>
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:grid-cols-3 ">
+              <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
+                <CardHeader
+                  title="Beyond the code"
+                  description="Explore my interests and hobbies beyond the digital realm"
+                  className="px-6 py-6"
+                />
+
+                <div className="relative flex-1" ref={consttraintRef}>
+                  {hobbies.map((hobby) => (
+                    <motion.div
+                      key={hobby.title}
+                      className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
+                      style={{
+                        left: hobby.left,
+                        top: hobby.top,
+                      }}
+                      drag
+                      dragConstraints={consttraintRef}
+                    >
+                      <span className="font-medium text-gray-950">
+                        {hobby.title}
+                      </span>
+                      <span>{hobby.emoji} </span>
+                    </motion.div>
+                  ))}
+                </div>
+              </Card>
+
+              <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
+                {/* <Image
                 src={mapImage}
                 alt="Map"
                 className="h-full w-full object-cover object-left-top"
@@ -201,9 +210,10 @@ export const AboutSection = () => {
                   className="size-20"
                 />
               </div> */}
-              <MapWithNoSSR />
-            </Card>
-          </div>
+                <MapWithNoSSR />
+              </Card>
+            </div>{" "}
+          </AnimatedSection>
         </div>
       </div>
     </div>

@@ -8,6 +8,7 @@ import { Card } from "@/components/Card";
 import React, { forwardRef, useState } from "react";
 import { X, ArrowRightCircle } from "lucide-react";
 import { ProtfolioProjects } from "@/lib/Static-Data";
+import AnimatedSection from "@/lib/Animate-on-scroll";
 
 const ProjectSection = forwardRef<HTMLDivElement>((props, ref) => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -15,12 +16,13 @@ const ProjectSection = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <section ref={ref} className="pb-16 lg:py-24">
       <div className="container">
-        <SectionHeader
-          eyebrow="Real-world Results"
-          title="Featured Projects"
-          description="See how I transformed concepts into engaging digital experiences."
-        />
-
+        <AnimatedSection>
+          <SectionHeader
+            eyebrow="Real-world Results"
+            title="Featured Projects"
+            description="See how I transformed concepts into engaging digital experiences."
+          />
+        </AnimatedSection>
         {/* New Headings */}
         {/* <div className="flex justify-center">
             <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent text-center">

@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import { poppins, calistoga } from "@/pages/_app";
+
 import { twMerge } from "tailwind-merge";
 export default function Document() {
   return (

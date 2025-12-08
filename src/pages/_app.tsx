@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Poppins, Calistoga } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 
 export const poppins = Poppins({
   subsets: ["latin"],
@@ -18,6 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={`${poppins.variable} ${calistoga.variable}`}>
       <Component {...pageProps} />
+      <Toaster position="top-right" />
     </div>
   );
 }
