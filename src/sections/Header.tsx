@@ -45,7 +45,7 @@ export const HeaderSection = ({ activeSection }: HeaderSectionProps) => {
           Projects
         </a>
 
-        <a
+        {/* <a
           href="#resume-section"
           className={`nav-item ${
             activeLink === "resume"
@@ -55,7 +55,7 @@ export const HeaderSection = ({ activeSection }: HeaderSectionProps) => {
           onClick={() => handleLinkClick("resume")}
         >
           Resume
-        </a>
+        </a> */}
 
         <a
           href="#about-section"

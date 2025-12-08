@@ -16,7 +16,7 @@ export const experience = [
   {
     role: "MERN Stack Developer Intern ",
     company: "NETSOL Technologies",
-    year: "Sep-2024 - Nov-2024",
+    year: "2024",
     description: [
       "Contributed to frontend development using React.js, Bootstrap, and CSS3",
       "Collaborated with backend developers to integrate APIs and handle data with MongoDB.",
@@ -27,10 +27,10 @@ export const experience = [
 
 export const education = [
   {
-    degree: "MCS",
+    degree: "Master of Computer Science (MCS)",
     institution: "Gomal University",
     description:
-      "I completed my Master of Computer Science from Gomal University, where I focused on advanced programming, software development, and modern web technologies. During my studies, I worked on practical projects that improved my understanding of real-world problem solving and system design. This degree strengthened my technical foundation and prepared me to work confidently in the field of web and software development.",
+      "I completed my Master of Computer Science from Gomal University, where I focused on advanced programming, software development, and modern web technologies. During my studies, I worked on practical projects that improved my understanding of real-world problem solving and system design.",
   },
   {
     degree: "Intermediate in computer science",
@@ -48,11 +48,7 @@ export const education = [
 
 export const summary = `I am a passionate MERN Stack Developer with hands-on experience in building responsive, scalable, and user-friendly web applications. Skilled in React.js, Next.js, Node.js, Express.js, MongoDB, and modern UI frameworks like Tailwind CSS and Material UI, I focus on writing clean, efficient, and maintainable code.
 
-Currently working at Softon Ltd., I have contributed to multiple real-world projects, including e-commerce platforms, admin dashboards, and backend APIs. My work involves developing reusable components, integrating RESTful APIs, optimizing performance, and ensuring cross-browser compatibility.
-
-I enjoy solving problems, collaborating with teams, and learning new technologies to keep up with industry trends. My goal is to create impactful digital solutions that enhance user experiences and deliver measurable business value.
-
-Core Skills: MERN Stack Development, Frontend Optimization, Backend APIs, State Management, React Query, SEO Optimization, Performance Tuning, Responsive Design.`;
+Currently working at Softon Ltd., I have contributed to multiple real-world projects, including e-commerce platforms, admin dashboards, and backend APIs. My work involves developing reusable components, integrating RESTful APIs, optimizing performance, and ensuring cross-browser compatibility.`;
 
 export const ProtfolioProjects = [
   {

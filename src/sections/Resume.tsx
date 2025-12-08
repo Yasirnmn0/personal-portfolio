@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import { SectionHeader } from "@/components/SectionHeader";
-import { Card } from "@/components/Card";
+import { motion } from "framer-motion";
 import { GraduationCap, Layers, Download, User } from "lucide-react";
 import avatarImage from "@/assets/images/memoji-avatar-1.png";
 import { education, experience, summary } from "@/lib/Static-Data";
+import AnimatedSection from "@/lib/Animate-on-scroll";
+import { Card } from "@/components/Card";
 
 export const ResumeSection = () => {
   return (
@@ -19,7 +21,7 @@ export const ResumeSection = () => {
         />
 
         {/* Profile Row */}
-        <div className="flex flex-col md:flex-row items-center justify-between mt-12 mb-16">
+        <div className="flex flex-col items-center md:flex-row md:items-center justify-between mt-12 mb-8 md:mb-12 gap-6">
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 ml-2 rounded-full bg-gradient-to-tr from-emerald-400 to-sky-500 p-1 animate-spin-slow">
               <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center overflow-hidden">
@@ -39,77 +41,81 @@ export const ResumeSection = () => {
             </div>
           </div>
 
-          {/* Download Resume Button */}
-          {/* <button className="mt-6 md:mt-0 bg-gradient-to-tr from-emerald-400 to-sky-500 text-white font-semibold px-4 py-3 rounded-lg inline-flex items-center gap-2 transition-transform hover:scale-105">
-            <Download size={20} />
-            Download Resume
-          </button> */}
           <a
             href="/M-Yasir.pdf"
             download
-            className="mt-6 md:mt-0 bg-gradient-to-tr from-emerald-400 to-sky-500 text-white font-semibold px-4 py-3 rounded-lg inline-flex items-center gap-2 transition-transform hover:scale-105"
+            className="mt-4 md:mt-0 bg-gradient-to-tr from-emerald-400 to-sky-500 text-white font-semibold px-4 py-3 rounded-lg inline-flex items-center gap-2 transition-transform hover:scale-105"
           >
             <Download size={20} />
             Download Resume
           </a>
         </div>
 
-        {/* Horizontal Scrolling Cards */}
-        <div className="mt-12 lg:mt-20 flex overflow-x-clip mask-gradient py-4 -my-4">
-          <div className="flex gap-8 pr-8 flex-none animate-move-left animation-durationcards hover:[animation-play-state:paused]">
-            {[...new Array(2)].fill(0).map((_, index) => (
-              <div key={index} className="flex gap-8">
-                {/* Education Card */}
-                <Card className="max-w-xs md:max-w-md p-6 md:p-8 flex flex-col items-center text-center hover:-rotate-3 transition duration-300">
-                  <GraduationCap className="text-emerald-400 w-10 h-10 mb-3" />
-                  <h3 className="text-xl font-semibold mb-6">Education</h3>
-                  <div className="space-y-6">
-                    {education.map((item, idx) => (
-                      <div key={idx}>
-                        <h4 className="text-lg font-medium">{item.degree}</h4>
-                        <p className="text-sm text-white/70">
-                          {item.institution}
-                        </p>
-                        <p className="text-sm mt-2 text-white/60 leading-relaxed">
-                          {item.description}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </Card>
-
-                {/* Experience Card */}
-                <Card className="max-w-xs md:max-w-md p-6 md:p-8 flex flex-col items-center text-center hover:rotate-3 transition duration-300">
-                  <Layers className="text-emerald-400 w-10 h-10 mb-3" />
-                  <h3 className="text-xl font-semibold mb-6">Experience</h3>
-                  <div className="space-y-6">
-                    {experience.map((item, idx) => (
-                      <div key={idx}>
-                        <h4 className="text-lg font-semibold">{item.role}</h4>
-                        <p className="text-sm text-white/70 mb-2">
-                          {item.company} {item.year && `• ${item.year}`}
-                        </p>
-                        <ul className="list-disc list-inside text-white/60 text-sm space-y-1">
-                          {item.description.map((point, i) => (
-                            <li key={i}>{point}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </Card>
-
-                {/* Summary Card */}
-                <Card className="max-w-xs md:max-w-md p-6 md:p-8 flex flex-col items-center text-center hover:-rotate-3 transition duration-300">
-                  <User className="text-emerald-400 w-10 h-10 mb-3" />
-                  <h3 className="text-xl font-semibold mb-6">Summary</h3>
-                  <p className="text-sm text-white/70 leading-relaxed whitespace-pre-line">
-                    {summary}
-                  </p>
-                </Card>
+        <div className="flex flex-col gap-8 mt-12">
+          {/* Summary */}
+          <AnimatedSection>
+            <Card className="p-6 md:p-8 hover:shadow-lg transition-shadow duration-300">
+              <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
+                <User className="text-emerald-400 w-6 h-6" />
+                <span className="bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent">
+                  Summary
+                </span>
+              </h3>
+              <div className="space-y-3 text-sm text-white/80 leading-relaxed">
+                {summary.split("\n").map((line, idx) => (
+                  <p key={idx}>{line}</p>
+                ))}
               </div>
-            ))}
-          </div>
+            </Card>
+          </AnimatedSection>
+
+          {/* Education */}
+          <AnimatedSection>
+            <Card className="p-6 md:p-8 hover:shadow-lg transition-shadow duration-300">
+              <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
+                <GraduationCap className="text-emerald-400 w-6 h-6" />
+                <span className="bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent">
+                  Education
+                </span>
+              </h3>
+              <div className="space-y-4 text-sm text-white/80 leading-relaxed">
+                {education.map((item, idx) => (
+                  <div key={idx}>
+                    <h4 className="text-lg font-semibold">{item.degree}</h4>
+                    <p className="text-white/70">{item.institution}</p>
+                    <p className="mt-1 text-white/60">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </AnimatedSection>
+
+          {/* Experience */}
+          <AnimatedSection>
+            <Card className="p-6 md:p-8 hover:shadow-lg transition-shadow duration-300">
+              <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
+                <Layers className="text-emerald-400 w-6 h-6" />
+                <span className="bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent">
+                  Experience
+                </span>
+              </h3>
+              <div className="space-y-4 text-sm text-white/80 leading-relaxed">
+                {experience.map((item, idx) => (
+                  <div key={idx}>
+                    <h4 className="text-lg font-semibold">{item.role}</h4>
+                    <p className="font-medium">
+                      {item.company} {item.year && `• ${item.year}`}
+                    </p>
+                    <ul className="list-disc list-inside text-white/70 mt-2 space-y-1">
+                      {item.description.map((point, i) => (
+                        <li key={i}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </AnimatedSection>
         </div>
       </div>
     </section>

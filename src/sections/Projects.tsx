@@ -61,16 +61,16 @@ const ProjectSection = forwardRef<HTMLDivElement>((props, ref) => {
                     ))}
                   </ul>
 
-                  <div className="flex flex-col sm:flex-row gap-4 mt-8 items-center sm:items-start">
-                    <a href={project.link} className="w-full sm:w-auto">
-                      <button className="w-full sm:w-auto bg-white text-gray-950 h-12 px-4 rounded-xl font-semibold inline-flex items-center justify-center gap-2">
+                  <div className="w-full flex flex-col  md:flex-row lg:flex-col gap-4 mt-8 items-center lg:items-start">
+                    <a href={project.link} className="w-full ">
+                      <button className="w-full bg-white text-gray-950 h-12 px-4 rounded-xl font-semibold inline-flex items-center justify-center gap-2">
                         <span>Visit Live Site</span>
                         <ArrowUpRightIcon className="size-4" />
                       </button>
                     </a>
 
                     <button
-                      className="w-full sm:w-auto bg-gradient-to-l from-emerald-300 to-sky-400 text-white h-12 px-4 rounded-xl font-semibold inline-flex items-center justify-center gap-2"
+                      className="w-full bg-gradient-to-l from-emerald-300 to-sky-400 text-white h-12 px-4 rounded-xl font-semibold inline-flex items-center justify-center gap-2"
                       onClick={() => setSelectedProject(idx)}
                     >
                       <span>Read More</span>

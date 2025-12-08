@@ -18,7 +18,7 @@ export default function Home() {
 
   const heroRef = useRef<HTMLDivElement | null>(null);
   const projectsRef = useRef<HTMLDivElement | null>(null);
-  const resumeRef = useRef<HTMLDivElement | null>(null);
+  // const resumeRef = useRef<HTMLDivElement | null>(null);
   const aboutRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
 
@@ -36,7 +36,7 @@ export default function Home() {
     const sections: Array<{ id: SectionId; hash: string }> = [
       { id: "home", hash: "hero-section" },
       { id: "projects", hash: "projects-section" },
-      { id: "resume", hash: "resume-section" },
+      // { id: "resume", hash: "resume-section" },
       { id: "about", hash: "about-section" },
       { id: "contact", hash: "contact-section" },
     ];
@@ -112,7 +112,7 @@ export default function Home() {
         <ProjectSection />
       </div>
 
-      <div id="resume-section" ref={resumeRef}>
+      <div id="resume-section">
         <ResumeSection />
       </div>
 
