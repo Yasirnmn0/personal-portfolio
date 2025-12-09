@@ -63,8 +63,8 @@ const ProjectSection = forwardRef<HTMLDivElement>((props, ref) => {
                     ))}
                   </ul>
 
-                  <div className="w-full flex flex-col  md:flex-row lg:flex-col gap-4 mt-8 items-center lg:items-start">
-                    <a href={project.link} className="w-full ">
+                  <div className="w-full flex flex-col md:flex-col lg:flex-row xl:flex-col gap-4 mt-8 items-center lg:items-start">
+                    <a href={project.link} className="w-full">
                       <button className="w-full bg-white text-gray-950 h-12 px-4 rounded-xl font-semibold inline-flex items-center justify-center gap-2">
                         <span>Visit Live Site</span>
                         <ArrowUpRightIcon className="size-4" />

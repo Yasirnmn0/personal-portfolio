@@ -26,15 +26,16 @@ export const ResumeSection = () => {
         <AnimatedSection>
           <div className="flex flex-col items-center md:flex-row md:items-center justify-between mt-12 mb-8 md:mb-12 gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 ml-2 rounded-full bg-gradient-to-tr from-emerald-400 to-sky-500 p-1 animate-spin-slow">
+              <div className="w-14 h-14 sm:w-14 sm:h-14 ml-2 rounded-full bg-gradient-to-tr from-emerald-400 to-sky-500 p-1 animate-spin-slow flex-shrink-0">
                 <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center overflow-hidden">
                   <Image
                     src={avatarImage}
                     alt="Muhammad Yasir"
-                    className="w-16 h-16 object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
+
               <div>
                 <h2 className="text-2xl font-bold">Yasir Noman</h2>
                 <p className="text-gray-400">
