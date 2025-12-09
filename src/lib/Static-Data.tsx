@@ -1,6 +1,7 @@
 import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
 import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
 import Cakeryimg from "@/assets/images/cakeryimg.png";
+import darksaaslandingpage from "@/assets/images/dark-saas-landing-page.png";
 
 export const experience = [
   {
@@ -196,6 +197,6 @@ export const ProtfolioProjects = [
       // },
     ],
     link: "",
-    image: aiStartupLandingPage,
+    image: darksaaslandingpage,
   },
 ];
